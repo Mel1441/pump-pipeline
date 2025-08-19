@@ -84,10 +84,6 @@ class LidBasalRateChange(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -276,10 +272,6 @@ class LidAlertActivated(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
     
     @property
     def alertString(self):
@@ -475,10 +467,6 @@ class LidAlarmActivated(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
     
     @property
     def alarmString(self):
@@ -533,10 +521,6 @@ class LidMalfunctionActivated(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -608,10 +592,6 @@ class LidPumpingSuspended(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -654,10 +634,6 @@ class LidPumpingResumed(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -703,10 +679,6 @@ class LidTimeChanged(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -751,10 +723,6 @@ class LidDateChanged(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -887,10 +855,6 @@ class LidBgReadingTaken(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -975,10 +939,6 @@ class LidBolusCompleted(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -1059,10 +1019,6 @@ class LidBolexCompleted(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -1247,10 +1203,6 @@ class LidAlertCleared(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -1430,10 +1382,6 @@ class LidAlarmCleared(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -1473,10 +1421,6 @@ class LidCartridgeFilled(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -1530,10 +1474,6 @@ class LidShelfMode(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -1603,10 +1543,6 @@ class LidBolusActivated(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -1673,10 +1609,6 @@ class LidBolexActivated(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -1719,10 +1651,6 @@ class LidDataLogCorruption(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -1785,10 +1713,6 @@ class LidCannulaFilled(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -1854,10 +1778,6 @@ class LidTubingFilled(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -1958,10 +1878,6 @@ class LidBolusRequestedMsg1(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -2113,10 +2029,6 @@ class LidBolusRequestedMsg2(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -2171,10 +2083,6 @@ class LidBolusRequestedMsg3(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -2220,10 +2128,6 @@ class LidNewDay(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -2272,10 +2176,6 @@ class LidArmInit(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -2464,10 +2364,6 @@ class LidPlgsPeriodic(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -2550,10 +2446,6 @@ class LidCgmAlertActivated(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -2623,10 +2515,6 @@ class LidCgmAlertCleared(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -2672,10 +2560,6 @@ class LidVersionInfo(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -2752,10 +2636,6 @@ class LidUpdateStatus(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -2804,10 +2684,6 @@ class LidCgmStartSessionGx(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -2895,10 +2771,6 @@ class LidCgmJoinSessionGx(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -2990,11 +2862,7 @@ class LidCgmStopSessionGx(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
-
+    
     def todict(self):
         return dict(
             id=self.ID,
@@ -3227,10 +3095,6 @@ class LidAaUserModeChange(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -3427,10 +3291,6 @@ class LidAaPcmChange(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -3577,10 +3437,6 @@ class LidCgmDataGxb(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -3660,10 +3516,6 @@ class LidBasalDelivery(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -3806,10 +3658,6 @@ class LidBolusDelivery(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -3864,10 +3712,6 @@ class LidVersionsA(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -3978,10 +3822,6 @@ class LidAaDailyStatus(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -4082,10 +3922,6 @@ class LidCgmAlertActivatedDex(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -4178,10 +4014,6 @@ class LidCgmAlertClearedDex(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -4293,10 +4125,6 @@ class LidCgmAlertAckDex(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -4474,10 +4302,6 @@ class LidCgmDataFsl2(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -4525,10 +4349,6 @@ class LidCgmJoinSessionG7(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -4711,10 +4531,6 @@ class LidCgmDataG7(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -4763,10 +4579,6 @@ class LidCgmStartSessionFsl2(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -4813,10 +4625,6 @@ class LidCgmStopSessionFsl2(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -4866,10 +4674,6 @@ class LidCgmJoinSessionFsl2(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -4925,10 +4729,6 @@ class LidCgmStopSessionG7(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
@@ -5031,10 +4831,6 @@ class LidCgmAlertActivatedFsl2(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -5126,10 +4922,6 @@ class LidCgmAlertClearedFsl2(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -5186,10 +4978,6 @@ class LidDailyBasal(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -5232,10 +5020,6 @@ class LidCarbsEntered(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -5273,10 +5057,6 @@ class LidUsbConnected(BaseEvent):
     def seqNum(self):
         return self.raw.seqNum
 
-    @property
-    def eventId(self):
-        return self.ID
-
     def todict(self):
         return dict(
             id=self.ID,
@@ -5313,10 +5093,6 @@ class LidUsbDisconnected(BaseEvent):
     @property
     def seqNum(self):
         return self.raw.seqNum
-
-    @property
-    def eventId(self):
-        return self.ID
 
     def todict(self):
         return dict(
