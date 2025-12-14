@@ -24,6 +24,8 @@ from .eventparser.utils import batched
 
 from .eventparser.generic import Event, Events, decode_raw_events, EVENT_LEN
 from dotenv import load_dotenv
+from collections import defaultdict
+from .loader import load_data
 
 logger = logging.getLogger(__name__)
 load_dotenv()
@@ -166,7 +168,7 @@ class TandemSourceApi:
             self.accessTokenExpiresAt = arrow.get(arrow.get().int_timestamp + oidc_json['expires_in'])
 
             self.cache_creds(email)
-
+            print('login succesful')
             return True
 
     def extract_jwt(self):
@@ -198,6 +200,7 @@ class TandemSourceApi:
             algorithms=['RS256'],
             audience=audience,
             issuer=issuer,
+            leeway=60
         )
 
         logger.info("Decoded JWT: %s" % json.dumps(id_token_claims))
@@ -375,6 +378,7 @@ class TandemSourceApi:
     tconnect_device_id is "tconnectDeviceId" from pump_event_metadata()
     """
     def pump_events_raw(self, tconnect_device_id, minSeqNum=None, maxSeqNum=None, event_ids_filter=None):
+        print('hi')
         minSeqNum = minSeqNum
         maxSeqNum = maxSeqNum
         event_ids_filter=event_ids_filter
@@ -403,12 +407,19 @@ class TandemSourceApi:
             event_ids_filter,
             #event_ids_filter=None if fetch_all_event_types else self.DEFAULT_EVENT_IDS
         )
-
+        
         pump_events_decoded = decode_raw_events(pump_events_raw)
         #logger.info(f"Read {len(pump_events_decoded)} bytes (est. {len(pump_events_decoded)/EVENT_LEN} events)")
         EVENT_LEN = 26
+
+        #data = lambda pump_events_decoded: (Event(bytearray(e)) for e in batched(pump_events_decoded, EVENT_LEN)
+
         all_events = []
         for e in batched(pump_events_decoded, EVENT_LEN):
             all = Event(bytearray(e)) 
             all_events.append(all)
-        return all_events
+        return load_data(all_events)
+
+   
+
+ #__name__ == '__main__':
