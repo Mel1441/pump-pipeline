@@ -11,18 +11,18 @@ The goal of this project is to capture insulin pump data from [Tandem Source](ht
 
 - [ ] any events with duplicate timestamps ??
 - [ ] total daily insulin
-- [ ] total number of carbs (sum carbs from carbs_entered)
-- [ ] carb bolus (count (*) drop dups from carbs_entered)
-- [ ] highest bg (max currentglucosedisplayvalue from cgm_data_g7)
-- [ ] lowest bg (min currentglucosedisplayvalue from cgm_data_g7)
-- [ ] percent basal increased (count (*) from basal_delivery where commandedRate > profilebasalrate)
+- [ ] total number of carbs 
+- [ ] carb bolus 
+- [ ] highest bg 
+- [ ] lowest bg 
+- [ ] percent basal increased 
 - [ ] number of automatic corrections
 - [ ] number of boluses 
 - [ ] break down of boluses
-- [ ] precent basal decreased (count (*) from basal_delivery where commandedRate < profilebasalrate)
-- [ ] percent basal at zero (count (*) from basal_delivery where commandedRate = 0)
+- [ ] precent basal decreased 
+- [ ] percent basal at zero 
 - [ ] red flag - less than three times carbs entered 
-- [ ] red flag - low between 12 and 8 am and time (select * from cgm_data_g7 where currentglucosedisplayvalue < 80 and eventTimestamp between x and x)
+- [ ] red flag - low between 12 and 8 am and time 
 - [ ] red flag - high and how long
 - [ ] red flag - any length of time between cgm readings that is greater than five minutes 
 - [ ] max amount of time between cgm readings

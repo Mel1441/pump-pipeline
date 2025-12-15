@@ -168,7 +168,7 @@ class TandemSourceApi:
             self.accessTokenExpiresAt = arrow.get(arrow.get().int_timestamp + oidc_json['expires_in'])
 
             self.cache_creds(email)
-            print('login succesful')
+
             return True
 
     def extract_jwt(self):
@@ -378,7 +378,6 @@ class TandemSourceApi:
     tconnect_device_id is "tconnectDeviceId" from pump_event_metadata()
     """
     def pump_events_raw(self, tconnect_device_id, minSeqNum=None, maxSeqNum=None, event_ids_filter=None):
-        print('hi')
         minSeqNum = minSeqNum
         maxSeqNum = maxSeqNum
         event_ids_filter=event_ids_filter

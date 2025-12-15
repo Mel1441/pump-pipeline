@@ -16,15 +16,7 @@ def Event(x):
     if not raw_event.id in EVENT_IDS:
         return raw_event
     return EVENT_IDS[raw_event.id].build(x).todict()
-    #for e_id in EVENT_IDS:
-     #   if raw_event.id == e_id:
-      #      data = []
-      #      row = EVENT_IDS[raw_event.id].build(x).todict()
-      #      data.append(row)
-      #      df = pd.DataFrame(data, columns=[base, event_schemas[e_id] ])
-      #      print(df)
      
-
 Events = lambda x: (Event(bytearray(e)) for e in batched(x, EVENT_LEN))
 
 def decode_raw_events(raw):
