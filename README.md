@@ -6,20 +6,33 @@ The goal of this project is to capture insulin pump data from [Tandem Source](ht
 
 ## To-Do ##
 
+
 **daily report**
 
-- [ ] any events with duplicate timestamps
+- [ ] any events with duplicate timestamps ??
 - [ ] total daily insulin
-- [ ] total number of carbs
-- [ ] carb bolus
-- [ ] highest bg
-- [ ] lowest bg
+- [ ] total number of carbs 
+- [ ] carb bolus 
+- [ ] highest bg 
+- [ ] lowest bg 
 - [ ] percent basal increased 
 - [ ] number of automatic corrections
 - [ ] number of boluses 
 - [ ] break down of boluses
 - [ ] precent basal decreased 
-- [ ] percent basal at zero
-- [ ] red flag - less than three times carbs entered
+- [ ] percent basal at zero 
+- [ ] red flag - less than three times carbs entered 
 - [ ] red flag - low between 12 and 8 am and time 
 - [ ] red flag - high and how long
+- [ ] red flag - any length of time between cgm readings that is greater than five minutes 
+- [ ] max amount of time between cgm readings
+
+** Alerts ** 
+    4: LidAlertActivated,
+    5: LidAlarmActivated,
+    6: LidMalfunctionActivated,
+    11: LidPumpingSuspended,
+    12: LidPumpingResumed,
+
+    60: LidDataLogCorruption,
+  

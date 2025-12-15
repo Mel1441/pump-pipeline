@@ -18,9 +18,9 @@ FLOAT32 = '>f'
 
 @dataclass
 class LidBasalRateChange(BaseEvent):
-    """3: LID_BASAL_RATE_CHANGE"""
+    """3: BASAL_RATE_CHANGE"""
     ID = 3
-    NAME = "LID_BASAL_RATE_CHANGE"
+    NAME = "BASAL_RATE_CHANGE"
 
     raw: RawEvent
     commandedbasalrate: float # units/hour
@@ -100,9 +100,9 @@ class LidBasalRateChange(BaseEvent):
 
 @dataclass
 class LidAlertActivated(BaseEvent):
-    """4: LID_ALERT_ACTIVATED"""
+    """4: ALERT_ACTIVATED"""
     ID = 4
-    NAME = "LID_ALERT_ACTIVATED"
+    NAME = "ALERT_ACTIVATED"
 
     raw: RawEvent
     alertidRaw: int
@@ -293,9 +293,9 @@ class LidAlertActivated(BaseEvent):
 
 @dataclass
 class LidAlarmActivated(BaseEvent):
-    """5: LID_ALARM_ACTIVATED"""
+    """5: ALARM_ACTIVATED"""
     ID = 5
-    NAME = "LID_ALARM_ACTIVATED"
+    NAME = "ALARM_ACTIVATED"
 
     raw: RawEvent
     alarmidRaw: int
@@ -488,9 +488,9 @@ class LidAlarmActivated(BaseEvent):
 
 @dataclass
 class LidMalfunctionActivated(BaseEvent):
-    """6: LID_MALFUNCTION_ACTIVATED"""
+    """6: MALFUNCTION_ACTIVATED"""
     ID = 6
-    NAME = "LID_MALFUNCTION_ACTIVATED"
+    NAME = "MALFUNCTION_ACTIVATED"
 
     raw: RawEvent
     malfidRaw: int
@@ -537,9 +537,9 @@ class LidMalfunctionActivated(BaseEvent):
 
 @dataclass
 class LidPumpingSuspended(BaseEvent):
-    """11: LID_PUMPING_SUSPENDED"""
+    """11: PUMPING_SUSPENDED"""
     ID = 11
-    NAME = "LID_PUMPING_SUSPENDED"
+    NAME = "PUMPING_SUSPENDED"
 
     raw: RawEvent
     presuspendstate: int
@@ -607,9 +607,9 @@ class LidPumpingSuspended(BaseEvent):
 
 @dataclass
 class LidPumpingResumed(BaseEvent):
-    """12: LID_PUMPING_RESUMED"""
+    """12: PUMPING_RESUMED"""
     ID = 12
-    NAME = "LID_PUMPING_RESUMED"
+    NAME = "PUMPING_RESUMED"
 
     raw: RawEvent
     preresumestate: int
@@ -648,9 +648,9 @@ class LidPumpingResumed(BaseEvent):
 
 @dataclass
 class LidTimeChanged(BaseEvent):
-    """13: LID_TIME_CHANGED"""
+    """13: TIME_CHANGED"""
     ID = 13
-    NAME = "LID_TIME_CHANGED"
+    NAME = "TIME_CHANGED"
 
     raw: RawEvent
     timeprior: int # ms
@@ -693,9 +693,9 @@ class LidTimeChanged(BaseEvent):
 
 @dataclass
 class LidDateChanged(BaseEvent):
-    """14: LID_DATE_CHANGED"""
+    """14: DATE_CHANGED"""
     ID = 14
-    NAME = "LID_DATE_CHANGED"
+    NAME = "DATE_CHANGED"
 
     raw: RawEvent
     dateprior: int # day
@@ -738,9 +738,9 @@ class LidDateChanged(BaseEvent):
 
 @dataclass
 class LidBgReadingTaken(BaseEvent):
-    """16: LID_BG_READING_TAKEN"""
+    """16: BG_READING_TAKEN"""
     ID = 16
-    NAME = "LID_BG_READING_TAKEN"
+    NAME = "BG_READING_TAKEN"
 
     raw: RawEvent
     selectediobRaw: int
@@ -874,9 +874,9 @@ class LidBgReadingTaken(BaseEvent):
 
 @dataclass
 class LidBolusCompleted(BaseEvent):
-    """20: LID_BOLUS_COMPLETED"""
+    """20: BOLUS_COMPLETED"""
     ID = 20
-    NAME = "LID_BOLUS_COMPLETED"
+    NAME = "BOLUS_COMPLETED"
 
     raw: RawEvent
     completionstatusRaw: int
@@ -955,9 +955,9 @@ class LidBolusCompleted(BaseEvent):
 
 @dataclass
 class LidBolexCompleted(BaseEvent):
-    """21: LID_BOLEX_COMPLETED"""
+    """21: BOLEX_COMPLETED"""
     ID = 21
-    NAME = "LID_BOLEX_COMPLETED"
+    NAME = "BOLEX_COMPLETED"
 
     raw: RawEvent
     completionstatusRaw: int
@@ -1036,9 +1036,9 @@ class LidBolexCompleted(BaseEvent):
 
 @dataclass
 class LidAlertCleared(BaseEvent):
-    """26: LID_ALERT_CLEARED"""
+    """26: ALERT_CLEARED"""
     ID = 26
-    NAME = "LID_ALERT_CLEARED"
+    NAME = "ALERT_CLEARED"
 
     raw: RawEvent
     alertidRaw: int
@@ -1216,9 +1216,9 @@ class LidAlertCleared(BaseEvent):
 
 @dataclass
 class LidAlarmCleared(BaseEvent):
-    """28: LID_ALARM_CLEARED"""
+    """28: ALARM_CLEARED"""
     ID = 28
-    NAME = "LID_ALARM_CLEARED"
+    NAME = "ALARM_CLEARED"
 
     raw: RawEvent
     alarmidRaw: int
@@ -1394,9 +1394,9 @@ class LidAlarmCleared(BaseEvent):
 
 @dataclass
 class LidCartridgeFilled(BaseEvent):
-    """33: LID_CARTRIDGE_FILLED"""
+    """33: CARTRIDGE_FILLED"""
     ID = 33
-    NAME = "LID_CARTRIDGE_FILLED"
+    NAME = "CARTRIDGE_FILLED"
 
     raw: RawEvent
     insulinvolume: int # units
@@ -1435,9 +1435,9 @@ class LidCartridgeFilled(BaseEvent):
 
 @dataclass
 class LidShelfMode(BaseEvent):
-    """53: LID_SHELF_MODE"""
+    """53: SHELF_MODE"""
     ID = 53
-    NAME = "LID_SHELF_MODE"
+    NAME = "SHELF_MODE"
 
     raw: RawEvent
     msecsincereset: int # ms
@@ -1492,9 +1492,9 @@ class LidShelfMode(BaseEvent):
 
 @dataclass
 class LidBolusActivated(BaseEvent):
-    """55: LID_BOLUS_ACTIVATED"""
+    """55: BOLUS_ACTIVATED"""
     ID = 55
-    NAME = "LID_BOLUS_ACTIVATED"
+    NAME = "BOLUS_ACTIVATED"
 
     raw: RawEvent
     selectediobRaw: int
@@ -1558,9 +1558,9 @@ class LidBolusActivated(BaseEvent):
 
 @dataclass
 class LidBolexActivated(BaseEvent):
-    """59: LID_BOLEX_ACTIVATED"""
+    """59: BOLEX_ACTIVATED"""
     ID = 59
-    NAME = "LID_BOLEX_ACTIVATED"
+    NAME = "BOLEX_ACTIVATED"
 
     raw: RawEvent
     selectediobRaw: int
@@ -1624,9 +1624,9 @@ class LidBolexActivated(BaseEvent):
 
 @dataclass
 class LidDataLogCorruption(BaseEvent):
-    """60: LID_DATA_LOG_CORRUPTION"""
+    """60: DATA_LOG_CORRUPTION"""
     ID = 60
-    NAME = "LID_DATA_LOG_CORRUPTION"
+    NAME = "DATA_LOG_CORRUPTION"
 
     raw: RawEvent
     block: int
@@ -1665,9 +1665,9 @@ class LidDataLogCorruption(BaseEvent):
 
 @dataclass
 class LidCannulaFilled(BaseEvent):
-    """61: LID_CANNULA_FILLED"""
+    """61: CANNULA_FILLED"""
     ID = 61
-    NAME = "LID_CANNULA_FILLED"
+    NAME = "CANNULA_FILLED"
 
     raw: RawEvent
     primesize: float # units
@@ -1727,9 +1727,9 @@ class LidCannulaFilled(BaseEvent):
 
 @dataclass
 class LidTubingFilled(BaseEvent):
-    """63: LID_TUBING_FILLED"""
+    """63: TUBING_FILLED"""
     ID = 63
-    NAME = "LID_TUBING_FILLED"
+    NAME = "TUBING_FILLED"
 
     raw: RawEvent
     primesize: float # units
@@ -1793,9 +1793,9 @@ class LidTubingFilled(BaseEvent):
 
 @dataclass
 class LidBolusRequestedMsg1(BaseEvent):
-    """64: LID_BOLUS_REQUESTED_MSG1"""
+    """64: BOLUS_REQUESTED_MSG1"""
     ID = 64
-    NAME = "LID_BOLUS_REQUESTED_MSG1"
+    NAME = "BOLUS_REQUESTED_MSG1"
 
     raw: RawEvent
     bolusid: int
@@ -1897,9 +1897,9 @@ class LidBolusRequestedMsg1(BaseEvent):
 
 @dataclass
 class LidBolusRequestedMsg2(BaseEvent):
-    """65: LID_BOLUS_REQUESTED_MSG2"""
+    """65: BOLUS_REQUESTED_MSG2"""
     ID = 65
-    NAME = "LID_BOLUS_REQUESTED_MSG2"
+    NAME = "BOLUS_REQUESTED_MSG2"
 
     raw: RawEvent
     selectediobRaw: int
@@ -2049,9 +2049,9 @@ class LidBolusRequestedMsg2(BaseEvent):
 
 @dataclass
 class LidBolusRequestedMsg3(BaseEvent):
-    """66: LID_BOLUS_REQUESTED_MSG3"""
+    """66: BOLUS_REQUESTED_MSG3"""
     ID = 66
-    NAME = "LID_BOLUS_REQUESTED_MSG3"
+    NAME = "BOLUS_REQUESTED_MSG3"
 
     raw: RawEvent
     bolusid: int
@@ -2098,9 +2098,9 @@ class LidBolusRequestedMsg3(BaseEvent):
 
 @dataclass
 class LidNewDay(BaseEvent):
-    """90: LID_NEW_DAY"""
+    """90: NEW_DAY"""
     ID = 90
-    NAME = "LID_NEW_DAY"
+    NAME = "NEW_DAY"
 
     raw: RawEvent
     commandedbasalrate: float # units/hour
@@ -2143,9 +2143,9 @@ class LidNewDay(BaseEvent):
 
 @dataclass
 class LidArmInit(BaseEvent):
-    """99: LID_ARM_INIT"""
+    """99: ARM_INIT"""
     ID = 99
-    NAME = "LID_ARM_INIT"
+    NAME = "ARM_INIT"
 
     raw: RawEvent
     version: int
@@ -2192,9 +2192,9 @@ class LidArmInit(BaseEvent):
 
 @dataclass
 class LidPlgsPeriodic(BaseEvent):
-    """140: LID_PLGS_PERIODIC"""
+    """140: PLGS_PERIODIC"""
     ID = 140
-    NAME = "LID_PLGS_PERIODIC"
+    NAME = "PLGS_PERIODIC"
 
     raw: RawEvent
     timestamp: int # sec
@@ -2383,9 +2383,9 @@ class LidPlgsPeriodic(BaseEvent):
 
 @dataclass
 class LidCgmAlertActivated(BaseEvent):
-    """171: LID_CGM_ALERT_ACTIVATED"""
+    """171: CGM_ALERT_ACTIVATED"""
     ID = 171
-    NAME = "LID_CGM_ALERT_ACTIVATED"
+    NAME = "CGM_ALERT_ACTIVATED"
 
     raw: RawEvent
     dalertidRaw: int
@@ -2461,9 +2461,9 @@ class LidCgmAlertActivated(BaseEvent):
 
 @dataclass
 class LidCgmAlertCleared(BaseEvent):
-    """172: LID_CGM_ALERT_CLEARED"""
+    """172: CGM_ALERT_CLEARED"""
     ID = 172
-    NAME = "LID_CGM_ALERT_CLEARED"
+    NAME = "CGM_ALERT_CLEARED"
 
     raw: RawEvent
     dalertidRaw: int
@@ -2527,9 +2527,9 @@ class LidCgmAlertCleared(BaseEvent):
 
 @dataclass
 class LidVersionInfo(BaseEvent):
-    """191: LID_VERSION_INFO"""
+    """191: VERSION_INFO"""
     ID = 191
-    NAME = "LID_VERSION_INFO"
+    NAME = "VERSION_INFO"
 
     raw: RawEvent
     version: int
@@ -2576,9 +2576,9 @@ class LidVersionInfo(BaseEvent):
 
 @dataclass
 class LidUpdateStatus(BaseEvent):
-    """203: LID_UPDATE_STATUS"""
+    """203: UPDATE_STATUS"""
     ID = 203
-    NAME = "LID_UPDATE_STATUS"
+    NAME = "UPDATE_STATUS"
 
     raw: RawEvent
     swupdatestatus: int
@@ -2654,9 +2654,9 @@ class LidUpdateStatus(BaseEvent):
 
 @dataclass
 class LidCgmStartSessionGx(BaseEvent):
-    """212: LID_CGM_START_SESSION_GX"""
+    """212: CGM_START_SESSION_GX"""
     ID = 212
-    NAME = "LID_CGM_START_SESSION_GX"
+    NAME = "CGM_START_SESSION_GX"
 
     raw: RawEvent
     currenttransmittertime: int # sec
@@ -2699,9 +2699,9 @@ class LidCgmStartSessionGx(BaseEvent):
 
 @dataclass
 class LidCgmJoinSessionGx(BaseEvent):
-    """213: LID_CGM_JOIN_SESSION_GX"""
+    """213: CGM_JOIN_SESSION_GX"""
     ID = 213
-    NAME = "LID_CGM_JOIN_SESSION_GX"
+    NAME = "CGM_JOIN_SESSION_GX"
 
     raw: RawEvent
     currenttransmittertime: int # sec
@@ -2787,9 +2787,9 @@ class LidCgmJoinSessionGx(BaseEvent):
 
 @dataclass
 class LidCgmStopSessionGx(BaseEvent):
-    """214: LID_CGM_STOP_SESSION_GX"""
+    """214: CGM_STOP_SESSION_GX"""
     ID = 214
-    NAME = "LID_CGM_STOP_SESSION_GX"
+    NAME = "CGM_STOP_SESSION_GX"
 
     raw: RawEvent
     currenttransmittertime: int # sec
@@ -2879,9 +2879,9 @@ class LidCgmStopSessionGx(BaseEvent):
 
 @dataclass
 class LidAaUserModeChange(BaseEvent):
-    """229: LID_AA_USER_MODE_CHANGE"""
+    """229: AA_USER_MODE_CHANGE"""
     ID = 229
-    NAME = "LID_AA_USER_MODE_CHANGE"
+    NAME = "AA_USER_MODE_CHANGE"
 
     raw: RawEvent
     exercisechoiceRaw: int
@@ -3115,9 +3115,9 @@ class LidAaUserModeChange(BaseEvent):
 
 @dataclass
 class LidAaPcmChange(BaseEvent):
-    """230: LID_AA_PCM_CHANGE"""
+    """230: AA_PCM_CHANGE"""
     ID = 230
-    NAME = "LID_AA_PCM_CHANGE"
+    NAME = "AA_PCM_CHANGE"
 
     raw: RawEvent
     currentpcmRaw: int
@@ -3309,9 +3309,9 @@ class LidAaPcmChange(BaseEvent):
 
 @dataclass
 class LidCgmDataGxb(BaseEvent):
-    """256: LID_CGM_DATA_GXB"""
+    """256: CGM_DATA_GXB"""
     ID = 256
-    NAME = "LID_CGM_DATA_GXB"
+    NAME = "CGM_DATA_GXB"
 
     raw: RawEvent
     glucosevaluestatusRaw: int
@@ -3457,9 +3457,9 @@ class LidCgmDataGxb(BaseEvent):
 
 @dataclass
 class LidBasalDelivery(BaseEvent):
-    """279: LID_BASAL_DELIVERY"""
+    """279: BASAL_DELIVERY"""
     ID = 279
-    NAME = "LID_BASAL_DELIVERY"
+    NAME = "BASAL_DELIVERY"
 
     raw: RawEvent
     commandedRateSourceRaw: int
@@ -3533,9 +3533,9 @@ class LidBasalDelivery(BaseEvent):
 
 @dataclass
 class LidBolusDelivery(BaseEvent):
-    """280: LID_BOLUS_DELIVERY"""
+    """280: BOLUS_DELIVERY"""
     ID = 280
-    NAME = "LID_BOLUS_DELIVERY"
+    NAME = "BOLUS_DELIVERY"
 
     raw: RawEvent
     bolusid: int
@@ -3679,9 +3679,9 @@ class LidBolusDelivery(BaseEvent):
 
 @dataclass
 class LidVersionsA(BaseEvent):
-    """307: LID_VERSIONS_A"""
+    """307: VERSIONS_A"""
     ID = 307
-    NAME = "LID_VERSIONS_A"
+    NAME = "VERSIONS_A"
 
     raw: RawEvent
     armpartnumber: int
@@ -3728,9 +3728,9 @@ class LidVersionsA(BaseEvent):
 
 @dataclass
 class LidAaDailyStatus(BaseEvent):
-    """313: LID_AA_DAILY_STATUS"""
+    """313: AA_DAILY_STATUS"""
     ID = 313
-    NAME = "LID_AA_DAILY_STATUS"
+    NAME = "AA_DAILY_STATUS"
 
     raw: RawEvent
     pumpcontrolstateRaw: int
@@ -3836,9 +3836,9 @@ class LidAaDailyStatus(BaseEvent):
 
 @dataclass
 class LidCgmAlertActivatedDex(BaseEvent):
-    """369: LID_CGM_ALERT_ACTIVATED_DEX"""
+    """369: CGM_ALERT_ACTIVATED_DEX"""
     ID = 369
-    NAME = "LID_CGM_ALERT_ACTIVATED_DEX"
+    NAME = "CGM_ALERT_ACTIVATED_DEX"
 
     raw: RawEvent
     dalertidRaw: int
@@ -3938,9 +3938,9 @@ class LidCgmAlertActivatedDex(BaseEvent):
 
 @dataclass
 class LidCgmAlertClearedDex(BaseEvent):
-    """370: LID_CGM_ALERT_CLEARED_DEX"""
+    """370: CGM_ALERT_CLEARED_DEX"""
     ID = 370
-    NAME = "LID_CGM_ALERT_CLEARED_DEX"
+    NAME = "CGM_ALERT_CLEARED_DEX"
 
     raw: RawEvent
     dalertidRaw: int
@@ -4028,9 +4028,9 @@ class LidCgmAlertClearedDex(BaseEvent):
 
 @dataclass
 class LidCgmAlertAckDex(BaseEvent):
-    """371: LID_CGM_ALERT_ACK_DEX"""
+    """371: CGM_ALERT_ACK_DEX"""
     ID = 371
-    NAME = "LID_CGM_ALERT_ACK_DEX"
+    NAME = "CGM_ALERT_ACK_DEX"
 
     raw: RawEvent
     dalertidRaw: int
@@ -4140,9 +4140,9 @@ class LidCgmAlertAckDex(BaseEvent):
 
 @dataclass
 class LidCgmDataFsl2(BaseEvent):
-    """372: LID_CGM_DATA_FSL2"""
+    """372: CGM_DATA_FSL2"""
     ID = 372
-    NAME = "LID_CGM_DATA_FSL2"
+    NAME = "CGM_DATA_FSL2"
 
     raw: RawEvent
     glucosevaluestatusRaw: int
@@ -4322,9 +4322,9 @@ class LidCgmDataFsl2(BaseEvent):
 
 @dataclass
 class LidCgmJoinSessionG7(BaseEvent):
-    """394: LID_CGM_JOIN_SESSION_G7"""
+    """394: CGM_JOIN_SESSION_G7"""
     ID = 394
-    NAME = "LID_CGM_JOIN_SESSION_G7"
+    NAME = "CGM_JOIN_SESSION_G7"
 
     raw: RawEvent
     cgmtimestamp: int # Seconds
@@ -4363,9 +4363,9 @@ class LidCgmJoinSessionG7(BaseEvent):
 
 @dataclass
 class LidCgmDataG7(BaseEvent):
-    """399: LID_CGM_DATA_G7"""
+    """399: CGM_DATA_G7"""
     ID = 399
-    NAME = "LID_CGM_DATA_G7"
+    NAME = "CGM_DATA_G7"
 
     raw: RawEvent
     glucosevaluestatusRaw: int
@@ -4551,9 +4551,9 @@ class LidCgmDataG7(BaseEvent):
 
 @dataclass
 class LidCgmStartSessionFsl2(BaseEvent):
-    """404: LID_CGM_START_SESSION_FSL2"""
+    """404: CGM_START_SESSION_FSL2"""
     ID = 404
-    NAME = "LID_CGM_START_SESSION_FSL2"
+    NAME = "CGM_START_SESSION_FSL2"
 
     raw: RawEvent
     sessionstarttime: int # sec
@@ -4592,9 +4592,9 @@ class LidCgmStartSessionFsl2(BaseEvent):
 
 @dataclass
 class LidCgmStopSessionFsl2(BaseEvent):
-    """405: LID_CGM_STOP_SESSION_FSL2"""
+    """405: CGM_STOP_SESSION_FSL2"""
     ID = 405
-    NAME = "LID_CGM_STOP_SESSION_FSL2"
+    NAME = "CGM_STOP_SESSION_FSL2"
 
     raw: RawEvent
     sessionstarttime: int # sec
@@ -4641,9 +4641,9 @@ class LidCgmStopSessionFsl2(BaseEvent):
 
 @dataclass
 class LidCgmJoinSessionFsl2(BaseEvent):
-    """406: LID_CGM_JOIN_SESSION_FSL2"""
+    """406: CGM_JOIN_SESSION_FSL2"""
     ID = 406
-    NAME = "LID_CGM_JOIN_SESSION_FSL2"
+    NAME = "CGM_JOIN_SESSION_FSL2"
 
     raw: RawEvent
     sessionstarttime: int # sec
@@ -4690,9 +4690,9 @@ class LidCgmJoinSessionFsl2(BaseEvent):
 
 @dataclass
 class LidCgmStopSessionG7(BaseEvent):
-    """447: LID_CGM_STOP_SESSION_G7"""
+    """447: CGM_STOP_SESSION_G7"""
     ID = 447
-    NAME = "LID_CGM_STOP_SESSION_G7"
+    NAME = "CGM_STOP_SESSION_G7"
 
     raw: RawEvent
     currenttransmittertime: int # sec
@@ -4747,9 +4747,9 @@ class LidCgmStopSessionG7(BaseEvent):
 
 @dataclass
 class LidCgmAlertActivatedFsl2(BaseEvent):
-    """460: LID_CGM_ALERT_ACTIVATED_FSL2"""
+    """460: CGM_ALERT_ACTIVATED_FSL2"""
     ID = 460
-    NAME = "LID_CGM_ALERT_ACTIVATED_FSL2"
+    NAME = "CGM_ALERT_ACTIVATED_FSL2"
 
     raw: RawEvent
     dalertidRaw: int
@@ -4847,9 +4847,9 @@ class LidCgmAlertActivatedFsl2(BaseEvent):
 
 @dataclass
 class LidCgmAlertClearedFsl2(BaseEvent):
-    """461: LID_CGM_ALERT_CLEARED_FSL2"""
+    """461: CGM_ALERT_CLEARED_FSL2"""
     ID = 461
-    NAME = "LID_CGM_ALERT_CLEARED_FSL2"
+    NAME = "CGM_ALERT_CLEARED_FSL2"
 
     raw: RawEvent
     dalertidRaw: int
@@ -4935,9 +4935,9 @@ class LidCgmAlertClearedFsl2(BaseEvent):
 
 @dataclass
 class LidDailyBasal(BaseEvent):
-    """81: LID_DAILY_BASAL"""
+    """81: DAILY_BASAL"""
     ID = 81
-    NAME = "LID_DAILY_BASAL"
+    NAME = "DAILY_BASAL"
 
     raw: RawEvent
     dailytotalbasal: float # units
@@ -4995,9 +4995,9 @@ class LidDailyBasal(BaseEvent):
 
 @dataclass
 class LidCarbsEntered(BaseEvent):
-    """48: LID_CARBS_ENTERED"""
+    """48: CARBS_ENTERED"""
     ID = 48
-    NAME = "LID_CARBS_ENTERED"
+    NAME = "CARBS_ENTERED"
 
     raw: RawEvent
     carbs: float # carbs
@@ -5032,9 +5032,9 @@ class LidCarbsEntered(BaseEvent):
 
 @dataclass
 class LidUsbConnected(BaseEvent):
-    """36: LID_USB_CONNECTED"""
+    """36: USB_CONNECTED"""
     ID = 36
-    NAME = "LID_USB_CONNECTED"
+    NAME = "USB_CONNECTED"
 
     raw: RawEvent
     negotiatedcurrent: float # mA
@@ -5069,9 +5069,9 @@ class LidUsbConnected(BaseEvent):
 
 @dataclass
 class LidUsbDisconnected(BaseEvent):
-    """37: LID_USB_DISCONNECTED"""
+    """37: USB_DISCONNECTED"""
     ID = 37
-    NAME = "LID_USB_DISCONNECTED"
+    NAME = "USB_DISCONNECTED"
 
     raw: RawEvent
     negotiatedcurrent: float # mA
@@ -5163,61 +5163,60 @@ EVENT_IDS = {
 }
 
 EVENT_NAMES = {
-    "LID_BASAL_RATE_CHANGE": LidBasalRateChange,
-    "LID_ALERT_ACTIVATED": LidAlertActivated,
-    "LID_ALARM_ACTIVATED": LidAlarmActivated,
-    "LID_MALFUNCTION_ACTIVATED": LidMalfunctionActivated,
-    "LID_PUMPING_SUSPENDED": LidPumpingSuspended,
-    "LID_PUMPING_RESUMED": LidPumpingResumed,
-    "LID_TIME_CHANGED": LidTimeChanged,
-    "LID_DATE_CHANGED": LidDateChanged,
-    "LID_BG_READING_TAKEN": LidBgReadingTaken,
-    "LID_BOLUS_COMPLETED": LidBolusCompleted,
-    "LID_BOLEX_COMPLETED": LidBolexCompleted,
-    "LID_ALERT_CLEARED": LidAlertCleared,
-    "LID_ALARM_CLEARED": LidAlarmCleared,
-    "LID_CARTRIDGE_FILLED": LidCartridgeFilled,
-    "LID_SHELF_MODE": LidShelfMode,
-    "LID_BOLUS_ACTIVATED": LidBolusActivated,
-    "LID_BOLEX_ACTIVATED": LidBolexActivated,
-    "LID_DATA_LOG_CORRUPTION": LidDataLogCorruption,
-    "LID_CANNULA_FILLED": LidCannulaFilled,
-    "LID_TUBING_FILLED": LidTubingFilled,
-    "LID_BOLUS_REQUESTED_MSG1": LidBolusRequestedMsg1,
-    "LID_BOLUS_REQUESTED_MSG2": LidBolusRequestedMsg2,
-    "LID_BOLUS_REQUESTED_MSG3": LidBolusRequestedMsg3,
-    "LID_NEW_DAY": LidNewDay,
-    "LID_ARM_INIT": LidArmInit,
-    "LID_PLGS_PERIODIC": LidPlgsPeriodic,
-    "LID_CGM_ALERT_ACTIVATED": LidCgmAlertActivated,
-    "LID_CGM_ALERT_CLEARED": LidCgmAlertCleared,
-    "LID_VERSION_INFO": LidVersionInfo,
-    "LID_UPDATE_STATUS": LidUpdateStatus,
-    "LID_CGM_START_SESSION_GX": LidCgmStartSessionGx,
-    "LID_CGM_JOIN_SESSION_GX": LidCgmJoinSessionGx,
-    "LID_CGM_STOP_SESSION_GX": LidCgmStopSessionGx,
-    "LID_AA_USER_MODE_CHANGE": LidAaUserModeChange,
-    "LID_AA_PCM_CHANGE": LidAaPcmChange,
-    "LID_CGM_DATA_GXB": LidCgmDataGxb,
-    "LID_BASAL_DELIVERY": LidBasalDelivery,
-    "LID_BOLUS_DELIVERY": LidBolusDelivery,
-    "LID_VERSIONS_A": LidVersionsA,
-    "LID_AA_DAILY_STATUS": LidAaDailyStatus,
-    "LID_CGM_ALERT_ACTIVATED_DEX": LidCgmAlertActivatedDex,
-    "LID_CGM_ALERT_CLEARED_DEX": LidCgmAlertClearedDex,
-    "LID_CGM_ALERT_ACK_DEX": LidCgmAlertAckDex,
-    "LID_CGM_DATA_FSL2": LidCgmDataFsl2,
-    "LID_CGM_JOIN_SESSION_G7": LidCgmJoinSessionG7,
-    "LID_CGM_DATA_G7": LidCgmDataG7,
-    "LID_CGM_START_SESSION_FSL2": LidCgmStartSessionFsl2,
-    "LID_CGM_STOP_SESSION_FSL2": LidCgmStopSessionFsl2,
-    "LID_CGM_JOIN_SESSION_FSL2": LidCgmJoinSessionFsl2,
-    "LID_CGM_STOP_SESSION_G7": LidCgmStopSessionG7,
-    "LID_CGM_ALERT_ACTIVATED_FSL2": LidCgmAlertActivatedFsl2,
-    "LID_CGM_ALERT_CLEARED_FSL2": LidCgmAlertClearedFsl2,
-    "LID_DAILY_BASAL": LidDailyBasal,
-    "LID_CARBS_ENTERED": LidCarbsEntered,
-    "LID_USB_CONNECTED": LidUsbConnected,
-    "LID_USB_DISCONNECTED": LidUsbDisconnected,
+    "BASAL_RATE_CHANGE": LidBasalRateChange,
+    "ALERT_ACTIVATED": LidAlertActivated,
+    "ALARM_ACTIVATED": LidAlarmActivated,
+    "MALFUNCTION_ACTIVATED": LidMalfunctionActivated,
+    "PUMPING_SUSPENDED": LidPumpingSuspended,
+    "PUMPING_RESUMED": LidPumpingResumed,
+    "TIME_CHANGED": LidTimeChanged,
+    "DATE_CHANGED": LidDateChanged,
+    "BG_READING_TAKEN": LidBgReadingTaken,
+    "BOLUS_COMPLETED": LidBolusCompleted,
+    "BOLEX_COMPLETED": LidBolexCompleted,
+    "ALERT_CLEARED": LidAlertCleared,
+    "ALARM_CLEARED": LidAlarmCleared,
+    "CARTRIDGE_FILLED": LidCartridgeFilled,
+    "SHELF_MODE": LidShelfMode,
+    "BOLUS_ACTIVATED": LidBolusActivated,
+    "BOLEX_ACTIVATED": LidBolexActivated,
+    "DATA_LOG_CORRUPTION": LidDataLogCorruption,
+    "CANNULA_FILLED": LidCannulaFilled,
+    "TUBING_FILLED": LidTubingFilled,
+    "BOLUS_REQUESTED_MSG1": LidBolusRequestedMsg1,
+    "BOLUS_REQUESTED_MSG2": LidBolusRequestedMsg2,
+    "BOLUS_REQUESTED_MSG3": LidBolusRequestedMsg3,
+    "NEW_DAY": LidNewDay,
+    "ARM_INIT": LidArmInit,
+    "PLGS_PERIODIC": LidPlgsPeriodic,
+    "CGM_ALERT_ACTIVATED": LidCgmAlertActivated,
+    "CGM_ALERT_CLEARED": LidCgmAlertCleared,
+    "VERSION_INFO": LidVersionInfo,
+    "UPDATE_STATUS": LidUpdateStatus,
+    "CGM_START_SESSION_GX": LidCgmStartSessionGx,
+    "CGM_JOIN_SESSION_GX": LidCgmJoinSessionGx,
+    "CGM_STOP_SESSION_GX": LidCgmStopSessionGx,
+    "AA_USER_MODE_CHANGE": LidAaUserModeChange,
+    "AA_PCM_CHANGE": LidAaPcmChange,
+    "CGM_DATA_GXB": LidCgmDataGxb,
+    "BASAL_DELIVERY": LidBasalDelivery,
+    "BOLUS_DELIVERY": LidBolusDelivery,
+    "VERSIONS_A": LidVersionsA,
+    "AA_DAILY_STATUS": LidAaDailyStatus,
+    "CGM_ALERT_ACTIVATED_DEX": LidCgmAlertActivatedDex,
+    "CGM_ALERT_CLEARED_DEX": LidCgmAlertClearedDex,
+    "CGM_ALERT_ACK_DEX": LidCgmAlertAckDex,
+    "CGM_DATA_FSL2": LidCgmDataFsl2,
+    "CGM_JOIN_SESSION_G7": LidCgmJoinSessionG7,
+    "CGM_DATA_G7": LidCgmDataG7,
+    "CGM_START_SESSION_FSL2": LidCgmStartSessionFsl2,
+    "CGM_STOP_SESSION_FSL2": LidCgmStopSessionFsl2,
+    "CGM_JOIN_SESSION_FSL2": LidCgmJoinSessionFsl2,
+    "CGM_STOP_SESSION_G7": LidCgmStopSessionG7,
+    "CGM_ALERT_ACTIVATED_FSL2": LidCgmAlertActivatedFsl2,
+    "CGM_ALERT_CLEARED_FSL2": LidCgmAlertClearedFsl2,
+    "DAILY_BASAL": LidDailyBasal,
+    "CARBS_ENTERED": LidCarbsEntered,
+    "USB_CONNECTED": LidUsbConnected,
+    "USB_DISCONNECTED": LidUsbDisconnected,
 }
-
