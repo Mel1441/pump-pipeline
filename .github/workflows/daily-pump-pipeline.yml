@@ -12,6 +12,7 @@ jobs:
     env:
       AWS_REGION: us-east-1
       FRONTEND_DIR: frontend_data
+      S3_BUCKET: ${{ secrets.S3_BUCKET }}
 
     steps:
       - name: Set today's date
