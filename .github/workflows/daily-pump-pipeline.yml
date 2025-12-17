@@ -1,0 +1,65 @@
+name: Daily Data Pipeline
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 7 PM EST = 0 UTC (adjust if needed)
+  workflow_dispatch:
+
+jobs:
+  process-data:
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_REGION: us-east-1
+      FRONTEND_DIR: frontend_data
+
+    steps:
+      - name: Set today's date
+        id: date
+        run: echo "date=$(date +%F)" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run pipeline for each user (env vars from CSV)
+        env:
+          USER_CREDENTIALS_CSV: ${{ secrets.user_creds_csv }}
+        run: |
+          echo "$USER_CREDENTIALS_CSV" | tail -n +2 | while IFS=',' read -r EMAIL PASSWORD PUMP; do
+            echo "Running pipeline for $USERID"
+
+            export USER_ID="$USERID"
+            export TCONNECT_EMAIL="$EMAIL"
+            export TCONNECT_PASSWORD="$PASSWORD"
+            export PUMP_ID="$PUMP"
+
+            python api/run_pipeline.py
+
+
+          done
+
+      - name: Push frontend data to external repo
+        env:
+          FRONTEND_PAT: ${{ secrets.FRONTEND_PAT }}
+          FRONTEND_REPO: Mel1441/website-frontend
+          FRONTEND_DIR: ${{ env.FRONTEND_DIR }}
+          DATE: ${{ steps.date.outputs.date }}
+
+        run: |
+          git clone https://x-access-token:$FRONTEND_PAT@github.com/$FRONTEND_REPO frontend-clone
+          cp -r "$FRONTEND_DIR"/* frontend-clone/
+
+          cd frontend-clone
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Update frontend data from daily pipeline" || echo "No changes to commit"
+          git push
