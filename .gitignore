@@ -6,7 +6,6 @@ venv/
 tmp*/
 .tmp*
 .DS_Store
-*.txt
 .*
 !.gitignore
 !.github
