@@ -34,7 +34,7 @@ jobs:
         env:
           USER_CREDENTIALS_CSV: ${{ secrets.user_creds_csv }}
         run: |
-          echo "$USER_CREDENTIALS_CSV" | tail -n +2 | while IFS=',' read -r EMAIL PASSWORD PUMP; do
+          echo "$USER_CREDENTIALS_CSV" | tail -n +2 | while IFS=',' read -r USERID EMAIL PASSWORD PUMP; do
             echo "Running pipeline for $USERID"
 
             export USER_ID="$USERID"
