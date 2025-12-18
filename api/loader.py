@@ -83,8 +83,8 @@ def load_data(data):
     for e in data:
         if isinstance (e, dict):
             event_data.append(e)
-    else:
-        unparsed_events.append(e)
+        else:
+            unparsed_events.append(e)
     transformed_data = get_transformed_data(event_data)
     write_transformed_data(transformed_data)    
     load_unparsed_events(unparsed_events)
