@@ -3,23 +3,28 @@ import numpy as np
 
 def get_df(data):
     df = pd.DataFrame(data)
+    print('df',df)
     return df.drop_duplicates()
 
 def sum_data(data, colName):
     df = get_df(data)
-    return df[colName].sum()
+    sum = df[colName].sum()
+    return sum
 
 def get_count(data, colName):
     df = get_df(data)
-    return df.shape[0]
+    count = df.shape[0]
+    return count
 
 def get_max(data, colName):
     df = get_df(data)
-    return df.max(axis=0)[colName]
+    max = df.max(axis=0)[colName]
+    return max
 
 def get_min(data, colName):
     df = get_df(data)
-    return df.min(axis=0)[colName]
+    min = df.min(axis=0)[colName]
+    return min
 
 def get_basal_increase(data):
     df = get_df(data)
@@ -38,16 +43,17 @@ def get_basal_decrease(data):
     return decrease_time
 
 def daily_transformations(data):
-    total_carbs = sum_data(data['carbs_entered'], 'carbs')
-    max_bg = get_max(data["cgm_data_g7"], 'currentglucosedisplayvalue')
-    min_bg = get_min(data["cgm_data_g7"], 'currentglucosedisplayvalue')
-    count_carbs_entered = get_count(data['carbs_entered'], 'carbs')
-    basal_increase = get_basal_increase(data['basal_delivery'])
-    basal_decrease = get_basal_decrease(data['basal_delivery'])
+
+    total_carbs = sum_data(data['CARBS_ENTERED'], 'carbs')
+    max_bg = get_max(data["CGM_DATA_G7"], 'currentglucosedisplayvalue')
+    min_bg = get_min(data["CGM_DATA_G7"], 'currentglucosedisplayvalue')
+    count_carbs_entered = get_count(data['CARBS_ENTERED'], 'carbs')
+    basal_increase = get_basal_increase(data['BASAL_DELIVERY'])
+    basal_decrease = get_basal_decrease(data['BASAL_DELIVERY'])
     return dict(
-        totalCarbs = total_carbs,
-        maxBG = max_bg,
-        minBG = min_bg,
+        totalCarbs = str(total_carbs),
+        maxBG = str(max_bg),
+        minBG = str(min_bg),
         countCarbs = count_carbs_entered,
         basalIncrease = basal_increase,
         basalDecrease = basal_decrease

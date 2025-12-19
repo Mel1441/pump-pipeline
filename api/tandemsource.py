@@ -385,13 +385,17 @@ class TandemSourceApi:
 
         # default: 229,5,28,4,26,99,279,3,16,59,21,55,20,280,64,65,66,61,33,371,171,369,460,172,370,461,372,399,256,213,406,394,212,404,214,405,447,313,60,14,6,90,230,140,12,11,53,13,63,203,307,191
         eventIdsFilter = '%2C'.join(map(str, event_ids_filter)) if event_ids_filter else None
-        return self.get('api/reports/reportsfacade/pumpevents/%s/%s?minDate=%s&maxDate=%s%s' % (
+        data = self.get('api/reports/reportsfacade/pumpevents/%s/%s?minDate=%s&maxDate=%s%s' % (
             self.pumperId,
             tconnect_device_id,
             minSeqNum,
             maxSeqNum,
             '&eventIds=%s' % eventIdsFilter if eventIdsFilter else ''
         ), {})
+        
+       
+
+        return data
 
     """
     Fetch and decode pump events using eventparser.
@@ -399,6 +403,7 @@ class TandemSourceApi:
     If fetch_all_events=True, then all event types from the history log will be returned.
     """
     def pump_events(self, tconnect_device_id, minSeqNum=None, maxSeqNum=None, event_ids_filter=None):
+        print('data',tconnect_device_id, minSeqNum, maxSeqNum)
         pump_events_raw = self.pump_events_raw(
             tconnect_device_id,
             minSeqNum,
@@ -406,17 +411,18 @@ class TandemSourceApi:
             event_ids_filter,
             #event_ids_filter=None if fetch_all_event_types else self.DEFAULT_EVENT_IDS
         )
-        
+
         pump_events_decoded = decode_raw_events(pump_events_raw)
         #logger.info(f"Read {len(pump_events_decoded)} bytes (est. {len(pump_events_decoded)/EVENT_LEN} events)")
         EVENT_LEN = 26
 
         #data = lambda pump_events_decoded: (Event(bytearray(e)) for e in batched(pump_events_decoded, EVENT_LEN)
-
+   
         all_events = []
         for e in batched(pump_events_decoded, EVENT_LEN):
             all = Event(bytearray(e)) 
             all_events.append(all)
+        
         return load_data(all_events)
 
    
