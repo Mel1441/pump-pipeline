@@ -43,18 +43,20 @@ def get_basal_decrease(data):
     return decrease_time
 
 def daily_transformations(data):
-
-    total_carbs = sum_data(data['CARBS_ENTERED'], 'carbs')
-    max_bg = get_max(data["CGM_DATA_G7"], 'currentglucosedisplayvalue')
-    min_bg = get_min(data["CGM_DATA_G7"], 'currentglucosedisplayvalue')
-    count_carbs_entered = get_count(data['CARBS_ENTERED'], 'carbs')
-    basal_increase = get_basal_increase(data['BASAL_DELIVERY'])
-    basal_decrease = get_basal_decrease(data['BASAL_DELIVERY'])
-    return dict(
-        totalCarbs = str(total_carbs),
-        maxBG = str(max_bg),
-        minBG = str(min_bg),
-        countCarbs = count_carbs_entered,
-        basalIncrease = basal_increase,
-        basalDecrease = basal_decrease
-    )
+    if data == []:
+        return 'no data'
+    else:
+        total_carbs = sum_data(data['CARBS_ENTERED'], 'carbs')
+        max_bg = get_max(data["CGM_DATA_G7"], 'currentglucosedisplayvalue')
+        min_bg = get_min(data["CGM_DATA_G7"], 'currentglucosedisplayvalue')
+        count_carbs_entered = get_count(data['CARBS_ENTERED'], 'carbs')
+        basal_increase = get_basal_increase(data['BASAL_DELIVERY'])
+        basal_decrease = get_basal_decrease(data['BASAL_DELIVERY'])
+        return dict(
+            totalCarbs = str(total_carbs),
+            maxBG = str(max_bg),
+            minBG = str(min_bg),
+            countCarbs = count_carbs_entered,
+            basalIncrease = basal_increase,
+            basalDecrease = basal_decrease
+        )
