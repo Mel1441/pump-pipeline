@@ -10,8 +10,8 @@ from datetime import date
 from transformations import daily_transformations
 
 load_dotenv()
-bucket = "S3_BUCKET"  
-user_id = os.getenv("USERID")
+bucket = os.getenv("S3_BUCKET")  
+user_id = os.getenv("USER_ID")
 
 def upload_to_s3(local_path, bucket, key):
     s3 = boto3.client("s3")
