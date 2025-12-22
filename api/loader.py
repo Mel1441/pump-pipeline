@@ -30,7 +30,7 @@ def get_transformed_data(data):
 
 def write_transformed_data(transformed_data, user_id):
     
-    output_path = f'jobs/data/{user_id}'
+    output_path = f'frontend_data/{user_id}'
     
     if os.path.exists(output_path):
         shutil.rmtree(output_path)

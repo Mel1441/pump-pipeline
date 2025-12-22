@@ -53,7 +53,7 @@ jobs:
       - name: Push frontend data to external repo
         env:
           FRONTEND_PAT: ${{ secrets.FRONTEND_PAT }}
-          FRONTEND_REPO: Mel1441/website-frontend
+          FRONTEND_REPO: Mel1441/website-frontend/jobs/data
           FRONTEND_DIR: ${{ env.FRONTEND_DIR }}
           DATE: ${{ steps.date.outputs.date }}
 
