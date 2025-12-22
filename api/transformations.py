@@ -3,7 +3,6 @@ import numpy as np
 
 def get_df(data):
     df = pd.DataFrame(data)
-    print('df',df)
     return df.drop_duplicates()
 
 def sum_data(data, colName):
@@ -43,9 +42,8 @@ def get_basal_decrease(data):
     return decrease_time
 
 def daily_transformations(data):
-    if data == []:
-        return 'no data'
-    else:
+ 
+
         total_carbs = sum_data(data['CARBS_ENTERED'], 'carbs')
         max_bg = get_max(data["CGM_DATA_G7"], 'currentglucosedisplayvalue')
         min_bg = get_min(data["CGM_DATA_G7"], 'currentglucosedisplayvalue')

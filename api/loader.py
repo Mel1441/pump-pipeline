@@ -91,8 +91,11 @@ def load_data(data):
             event_data.append(e)
         else:
             unparsed_events.append(e)
-            
-    transformed_data = get_transformed_data(event_data)
-    write_transformed_data(transformed_data, user_id)    
-    load_unparsed_events(unparsed_events, user_id)
-    load_parsed_events(event_data)
+ 
+    if event_data == []:
+        return print('no data')
+    else: 
+        transformed_data = get_transformed_data(event_data)
+        write_transformed_data(transformed_data, user_id)    
+        load_unparsed_events(unparsed_events, user_id)
+        load_parsed_events(event_data)

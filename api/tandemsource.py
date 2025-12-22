@@ -403,7 +403,7 @@ class TandemSourceApi:
     If fetch_all_events=True, then all event types from the history log will be returned.
     """
     def pump_events(self, tconnect_device_id, minSeqNum=None, maxSeqNum=None, event_ids_filter=None):
-        print('data',tconnect_device_id, minSeqNum, maxSeqNum)
+
         pump_events_raw = self.pump_events_raw(
             tconnect_device_id,
             minSeqNum,
