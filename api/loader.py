@@ -74,7 +74,7 @@ def serialize_events(events, output_path):
 
 def load_parsed_events(data):
     grouped_data = group_by_id(data)
-    return write_grouped_parquet_to_s3(grouped_data, bucket, bucket, engine='pyarrow')
+    return write_grouped_parquet_to_s3(user_id, grouped_data, bucket, engine='pyarrow')
 
 def load_unparsed_events(data, user_id):
 
