@@ -9,3 +9,5 @@ tmp*/
 .*
 !.gitignore
 !.github
+jobs/
+*.jsonl

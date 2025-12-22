@@ -4,10 +4,14 @@ import boto3
 from collections import defaultdict
 import os
 import json
+import shutil
+from dotenv import load_dotenv
 from datetime import date
 from transformations import daily_transformations
 
-bucket = os.environ["S3_BUCKET"]  
+load_dotenv()
+bucket = os.getenv("S3_BUCKET")  
+user_id = os.getenv("USER_ID")
 
 def upload_to_s3(local_path, bucket, key):
     s3 = boto3.client("s3")
@@ -20,12 +24,13 @@ def group_by_id(data, id_field='name'):
         grouped[row[id_field]].append(row)
     return grouped
 
-def get_transformed_data(grouped_data):
+def get_transformed_data(data):
+   grouped_data = group_by_id(data)
    return daily_transformations(grouped_data)
 
-def write_transformed_data(transformed_data):
-    username = os.getenv("USERNAME")
-    output_path = f'jobs/data/{username}'
+def write_transformed_data(transformed_data, user_id):
+    
+    output_path = f'frontend_data/{user_id}'
     
     if os.path.exists(output_path):
         shutil.rmtree(output_path)
@@ -69,7 +74,7 @@ def serialize_events(events, output_path):
 
 def load_parsed_events(data):
     grouped_data = group_by_id(data)
-    return write_grouped_parquet_to_s3(grouped_data, bucket, prefix='', engine='pyarrow')
+    return write_grouped_parquet_to_s3(user_id, grouped_data, bucket, engine='pyarrow')
 
 def load_unparsed_events(data, user_id):
 
@@ -78,14 +83,19 @@ def load_unparsed_events(data, user_id):
     upload_to_s3(file_name, bucket, f"{date.today()}/{user_id}/{file_name}")
 
 def load_data(data):
+
     event_data = []
     unparsed_events = []
     for e in data:
         if isinstance (e, dict):
             event_data.append(e)
-    else:
-        unparsed_events.append(e)
-    transformed_data = get_transformed_data(event_data)
-    write_transformed_data(transformed_data)    
-    load_unparsed_events(unparsed_events)
-    load_parsed_events(event_data)
+        else:
+            unparsed_events.append(e)
+ 
+    if event_data == []:
+        return print('no data')
+    else: 
+        transformed_data = get_transformed_data(event_data)
+        write_transformed_data(transformed_data, user_id)    
+        load_unparsed_events(unparsed_events, user_id)
+        load_parsed_events(event_data)

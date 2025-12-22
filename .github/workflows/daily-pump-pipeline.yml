@@ -12,6 +12,10 @@ jobs:
     env:
       AWS_REGION: us-east-1
       FRONTEND_DIR: frontend_data
+      S3_BUCKET: ${{ secrets.S3_BUCKET }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
 
     steps:
       - name: Set today's date
@@ -33,7 +37,7 @@ jobs:
         env:
           USER_CREDENTIALS_CSV: ${{ secrets.user_creds_csv }}
         run: |
-          echo "$USER_CREDENTIALS_CSV" | tail -n +2 | while IFS=',' read -r EMAIL PASSWORD PUMP; do
+          echo "$USER_CREDENTIALS_CSV" | tail -n +2 | while IFS=',' read -r USERID EMAIL PASSWORD PUMP; do
             echo "Running pipeline for $USERID"
 
             export USER_ID="$USERID"
@@ -55,7 +59,7 @@ jobs:
 
         run: |
           git clone https://x-access-token:$FRONTEND_PAT@github.com/$FRONTEND_REPO frontend-clone
-          cp -r "$FRONTEND_DIR"/* frontend-clone/
+          cp -r "$FRONTEND_DIR"/* frontend-clone/src/data
 
           cd frontend-clone
           git config user.name "github-actions[bot]"
