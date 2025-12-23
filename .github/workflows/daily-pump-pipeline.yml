@@ -59,8 +59,7 @@ jobs:
 
         run: |
           git clone https://x-access-token:$FRONTEND_PAT@github.com/$FRONTEND_REPO frontend-clone
-          cp -r "$FRONTEND_DIR"/* frontend-clone/src/data/$DATE/
-
+          cp -r "$FRONTEND_DIR"/* frontend-clone/src/data/
           cd frontend-clone
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

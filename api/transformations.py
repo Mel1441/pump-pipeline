@@ -52,7 +52,7 @@ def daily_transformations(data):
         basal_decrease = get_basal_decrease(data['BASAL_DELIVERY'])
         return dict(
             totalCarbs = str(total_carbs),
-            maxBG = str(max_bg),
+            #maxBG = str(max_bg),
             minBG = str(min_bg),
             countCarbs = count_carbs_entered,
             basalIncrease = basal_increase,
