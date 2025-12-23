@@ -36,7 +36,7 @@ def write_transformed_data(transformed_data, user_id):
         shutil.rmtree(output_path)
 
     os.makedirs(output_path)
-    with open(os.path.join(output_path, "transformed_data.json"), "w") as f:
+    with open(os.path.join(output_path, f"{date.today}transformed_data.json"), "w") as f:
         json.dump(transformed_data, f, indent=2)
 
 
