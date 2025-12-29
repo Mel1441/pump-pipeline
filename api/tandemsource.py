@@ -31,7 +31,7 @@ logger = logging.getLogger(__name__)
 load_dotenv()
 email = os.getenv('TCONNECT_EMAIL')
 password = os.getenv('TCONNECT_PASSWORD')
-pump_id = os.getenv('PUMP_ID')
+#pump_id = os.getenv('PUMP_ID')
 
 class TandemSourceApi:
     LOGIN_PAGE_URL = 'https://sso.tandemdiabetes.com/'
@@ -423,6 +423,10 @@ class TandemSourceApi:
             all = Event(bytearray(e)) 
             all_events.append(all)
         
+        return all_events
+    
+    def load_data(self, pump_id, minDate, maxDate):
+        all_events = self.pump_events(pump_id, minDate, maxDate)
         return load_data(all_events)
 
    
