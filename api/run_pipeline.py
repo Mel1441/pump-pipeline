@@ -2,17 +2,12 @@ import os
 from datetime import datetime, timedelta
 from tandemsource import TandemSourceApi
 
-#pump_id = os.environ["PUMP_ID"]
-#minDate = datetime.now() - timedelta(days=1)
-#maxDate = datetime.now()
+pump_id = os.environ["PUMP_ID"]
+minDate = datetime.now() - timedelta(days=1)
+maxDate = datetime.now()
 
-#minDate = minDate.strftime("%m-%d-%Y")
-#maxDate = maxDate.strftime("%m-%d-%Y")
+minDate = minDate.strftime("%m-%d-%Y")
+maxDate = maxDate.strftime("%m-%d-%Y")
 
-def run_manually(pump_id, minDate, maxDate):
-    print('HIIII',pump_id)
-    return TandemSourceApi().pump_events(pump_id, minDate, maxDate)
-
-
-#TandemSourceApi().load_data(pump_id, minDate, maxDate)
+TandemSourceApi().load_event_data(pump_id, minDate, maxDate)
 

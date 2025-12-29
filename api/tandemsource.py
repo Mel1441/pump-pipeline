@@ -425,7 +425,7 @@ class TandemSourceApi:
         
         return all_events
     
-    def load_data(self, pump_id, minDate, maxDate):
+    def load_event_data(self, pump_id, minDate, maxDate):
         all_events = self.pump_events(pump_id, minDate, maxDate)
         return load_data(all_events)
 
