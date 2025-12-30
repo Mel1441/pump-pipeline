@@ -43,14 +43,28 @@ def get_basal_decrease(data):
 
 def daily_transformations(data):
  
-
+    if 'CARBS_ENTERED' in data:
         total_carbs = sum_data(data['CARBS_ENTERED'], 'carbs')
+        count_carbs_entered = get_count(data['CARBS_ENTERED'], 'carbs')
+    else:
+        total_carbs = 'No Data'
+        count_carbs_entered = 'No Data'
+    
+    if 'CGM_DATA_G7' in data:
+
         #max_bg = get_max(data["CGM_DATA_G7"], 'currentglucosedisplayvalue')
         min_bg = get_min(data["CGM_DATA_G7"], 'currentglucosedisplayvalue')
-        count_carbs_entered = get_count(data['CARBS_ENTERED'], 'carbs')
+    else:
+        min_bg = 'No Data'
+    
+    if 'BASAL_DELIVER' in data:
         basal_increase = get_basal_increase(data['BASAL_DELIVERY'])
         basal_decrease = get_basal_decrease(data['BASAL_DELIVERY'])
-        return dict(
+    else:
+        basal_increase = 'No Data'
+        basal_decrease = 'No Data'
+
+    return dict(
             totalCarbs = str(total_carbs),
             #maxBG = str(max_bg),
             minBG = str(min_bg),
