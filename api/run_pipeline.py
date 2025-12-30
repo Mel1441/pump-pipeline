@@ -9,5 +9,5 @@ maxDate = datetime.now()
 minDate = minDate.strftime("%m-%d-%Y")
 maxDate = maxDate.strftime("%m-%d-%Y")
 
-TandemSourceApi().pump_events(pump_id, minDate, maxDate)
+TandemSourceApi().load_event_data(pump_id, minDate, maxDate)
 
