@@ -5,5 +5,4 @@ from eventparser.generic import decode_raw_events
 
 
 def run_manually(pump_id, minDate, maxDate):
-    print('HIIII',pump_id)
     return TandemSourceApi().pump_events(pump_id, minDate, maxDate)
