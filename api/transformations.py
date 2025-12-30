@@ -57,7 +57,7 @@ def daily_transformations(data):
     else:
         min_bg = 'No Data'
     
-    if 'BASAL_DELIVER' in data:
+    if 'BASAL_DELIVERY' in data:
         basal_increase = get_basal_increase(data['BASAL_DELIVERY'])
         basal_decrease = get_basal_decrease(data['BASAL_DELIVERY'])
     else:
